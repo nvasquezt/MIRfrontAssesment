@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { HOME_ROUTE, ABOUT_ROUTE } from '../Constants/Router';
+import { HOME_ROUTE, ABOUT_ROUTE } from 'src/Constants/Router';
 
 const NavBar = () => {
   return (
