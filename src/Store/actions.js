@@ -3,9 +3,9 @@ const ALL_PRODUCTS = () => {
     type: 'GET_PRODUCTS'
   }
 }
-const GET_PRODUCT = (payload) => {
+const GET_ONE_PRODUCT = (payload) => {
   return {
-    type: 'GET_PRODUCT',
+    type: 'GET_A_PRODUCT',
     payload
   }
 }

@@ -23,7 +23,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         products: action.payload
       }
-    case 'GET_PRODUCT':
+    case 'GET_A_PRODUCT':
       return {
         ...state,
         eachProduct: action.payload

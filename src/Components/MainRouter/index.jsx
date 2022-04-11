@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "src/Pages/Home";
-import { HOME_ROUTE, PRODUCT_DETAIL_ROUTE, ABOUT_ROUTE } from '../Constants/Router';
+import { HOME_ROUTE, PRODUCT_DETAIL_ROUTE, ABOUT_ROUTE } from "src/Constants/Router";
 import Products from "src/Pages/Products";
 import About from "src/Pages/About";
-import NavBar from "../NavBar";
+import NavBar from "src/Components/NavBar";
 
 
 const MainRouter = () => {
