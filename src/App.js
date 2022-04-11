@@ -4,10 +4,7 @@ import MainRouter from "./Components/MainRouter";
 
 const App = () => {
   return (
-    <div>
-      <MainRouter />
-      <h1>Hello World</h1>
-    </div>
+  <MainRouter />
   );
 }
 
