@@ -1,19 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './ProductCard.css';
 
-const ProducCard = (props) => {
+
+const ProductCard = (props) => {
+
   const { image, title } = props;
   return (
-    <div>
-      <img src={image} alt={title} />
+    <div className='firstdiv'>
+      <img className='imagee' src={image} alt={title} />
       <h3>{title}</h3>
     </div>
   )
 }
 
-ProducCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+ProductCard.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string
 }
 
-export default ProducCard
+ProductCard.defaultProps ={
+  image: '',
+  title: ''
+}
+
+export default ProductCard
