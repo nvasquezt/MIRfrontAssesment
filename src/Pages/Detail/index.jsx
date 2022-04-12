@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import './Detail.scss'
 
 const Detail = () => {
   const eachProduct = useSelector(state => state.eachProduct);
@@ -14,21 +15,20 @@ const Detail = () => {
       </div>
       <div className="detail__container">
         <div className="detail__image">
-          <img src={image} alt="{title}"/>
+          <img className='detail__image--item' src={image} alt="{title}"/>
         </div>
         <div className="detail__info">
-          <div className="detail__info__price">
-            <h2>Price: {price}</h2>
+          <div className="detail__info--rating">
+            <span><strong>Rate:</strong> {rate}</span> <span>/({count} votes)</span>
           </div>
-          <div className="detail__info__description">
+          <div className="detail__info--price">
+            <span><strong>Price:</strong> {price}</span>
+          </div>
+          <div className="detail__info--description">
             <p><strong>Description</strong> <br />{description}</p>
           </div>
-          <div className="detail__info__category">
-            <h3>category: {category}</h3>
-          </div>
-          <div className="detail__info__rating">
-            <h3>Rate: {rate}</h3>
-            <h3>votes: {count}</h3>
+          <div className="detail__info--category">
+            <span><strong>category:</strong> {category}</span>
           </div>
       </div>
 
