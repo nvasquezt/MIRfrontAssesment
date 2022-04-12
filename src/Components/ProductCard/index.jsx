@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { getAProductThunk } from '../../Store/actions';
 import './ProductCard.scss';
 import Button from '../Button';
 import { Link } from 'react-router-dom';
@@ -8,7 +10,10 @@ import { PRODUCT_DETAIL_ROUTE } from 'src/Constants/Router';
 
 const ProductCard = (props) => {
   const { id,image, title } = props;
-  const handleClick = () => {
+  const dispatch = useDispatch();
+
+  const handleClick = async () => {
+    dispatch(getAProductThunk(id));
   }
   return (
     <div className="productCard">
@@ -28,13 +33,12 @@ const ProductCard = (props) => {
 }
 
 ProductCard.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number.isRequired,
   image: PropTypes.string,
   title: PropTypes.string
 }
 
 ProductCard.defaultProps ={
-  id: '',
   image: '',
   title: ''
 }
