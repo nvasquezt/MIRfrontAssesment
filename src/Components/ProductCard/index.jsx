@@ -1,17 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ProductCard.css';
+import './ProductCard.scss';
+import Button from '../Button';
 
 
 const ProductCard = (props) => {
-
   const { image, title } = props;
+  const handleClick = () => {}
   return (
-    <div className='firstdiv'>
-      <img className='imagee' src={image} alt={title} />
-      <h3>{title}</h3>
+    <div className="productCard">
+      <div className="productCard__containerImage">
+        <img  className='productCard__containerImage--image' src={image} alt={title} />
+      </div>
+      <div className="productCard__title">
+        {title}
+      </div>
+      <div className="productCard__button">
+        <Button name="Add to cart" type="button" handleClick={handleClick} />
+      </div>
     </div>
-  )
+  );
 }
 
 ProductCard.propTypes = {
