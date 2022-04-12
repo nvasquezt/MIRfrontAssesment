@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 
 const Detail = () => {
   const eachProduct = useSelector(state => state.eachProduct);
-  const {title, price, description, category, image} = eachProduct;
+  const {title, price, description, category, image, rating} = eachProduct;
+  const {rate, count}= rating
 
   return (
     <div className="detail">
@@ -17,13 +18,17 @@ const Detail = () => {
         </div>
         <div className="detail__info">
           <div className="detail__info__price">
-            <h2>{price}</h2>
+            <h2>Price: {price}</h2>
           </div>
           <div className="detail__info__description">
-            <p>{description}</p>
+            <p><strong>Description</strong> <br />{description}</p>
           </div>
           <div className="detail__info__category">
-            <h3>{category}</h3>
+            <h3>category: {category}</h3>
+          </div>
+          <div className="detail__info__rating">
+            <h3>Rate: {rate}</h3>
+            <h3>votes: {count}</h3>
           </div>
       </div>
 
