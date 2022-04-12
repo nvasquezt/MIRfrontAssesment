@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {getProducts} from 'src/services/product';
 import ProductCard from 'src/Components/ProductCard';
-import './Home.css';
+import './Home.scss';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -17,11 +17,11 @@ const Home = () => {
   , []);
 
   return (
-    <div className="total">
-      <div className="title">
+    <div className="homeProducts">
+      <div className="homeProducts__title">
         <h1>Products</h1>
       </div>
-      <div className='indexdiv'>
+      <div className="homeProducts__container">
         {
           products.map(product => (
             <ProductCard
