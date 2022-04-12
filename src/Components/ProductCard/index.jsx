@@ -16,7 +16,7 @@ const ProductCard = (props) => {
         {title}
       </div>
       <div className="productCard__button">
-        <Button name="Add to cart" type="button" handleClick={handleClick} />
+        <Button name="Go to Details" type="button" handleClick={handleClick} />
       </div>
     </div>
   );
