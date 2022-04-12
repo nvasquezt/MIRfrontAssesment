@@ -1,30 +1,28 @@
-import React, {useState, useEffect} from 'react';
-import {getProducts} from 'src/services/product';
+import React, { useEffect } from 'react';
 import ProductCard from 'src/Components/ProductCard';
-import './index.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { getProductsThunk } from '../../Store/actions';
+import './Home.scss';
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
-
-  const showProducts = async () => {
-    const products = await getProducts();
-    setProducts(products);
-  }
+  const reduxProducts = useSelector(state => state.products);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    showProducts();
+    dispatch(getProductsThunk());
   }
   , []);
 
   return (
-    <div className="total">
-      <div className="title">
+    <div className="homeProducts">
+      <div className="homeProducts__title">
         <h1>Products</h1>
       </div>
-      <div className='indexdiv'>
+      <div className="homeProducts__container">
         {
-          products.map(product => (
+          reduxProducts.map(product => (
             <ProductCard
+            id={product.id}
             key={product.id}
             image={product.image}
             title={product.title} />

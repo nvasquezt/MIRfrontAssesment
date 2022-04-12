@@ -14,7 +14,7 @@ export const getAProductAction = (id) => ({
 });
 
 
-export const fetchProducts = () => async(dispatch) => {
+export const getProductsThunk = () => async(dispatch) => {
   try {
     const product = await getProducts()
     dispatch(getProductsAction(product))
@@ -23,7 +23,7 @@ export const fetchProducts = () => async(dispatch) => {
   }
 }
 
-export const fetchAProduct = (id) => async (dispatch) => {
+export const getAProductThunk = (id) => async (dispatch) => {
   try {
     const product = await getAProduct(id)
     dispatch(getAProductAction(product))
