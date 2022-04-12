@@ -12,7 +12,7 @@ const ProductCard = (props) => {
   const { id,image, title } = props;
   const dispatch = useDispatch();
 
-  const handleClick = () => {
+  const handleClick = async () => {
     dispatch(getAProductThunk(id));
   }
   return (
@@ -33,13 +33,12 @@ const ProductCard = (props) => {
 }
 
 ProductCard.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number.isRequired,
   image: PropTypes.string,
   title: PropTypes.string
 }
 
 ProductCard.defaultProps ={
-  id: '',
   image: '',
   title: ''
 }

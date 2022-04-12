@@ -13,7 +13,7 @@ const MainRouter = () => {
       <NavBar />
       <Routes>
         <Route path={HOME_ROUTE} element={<Home />} />
-        <Route path={PRODUCT_DETAIL_ROUTE} element={<Detail />} />
+        <Route path={`${PRODUCT_DETAIL_ROUTE}/:id`} element={<Detail />} />
         <Route path={ABOUT_ROUTE} element={<About />} />
       </Routes>
     </BrowserRouter>
