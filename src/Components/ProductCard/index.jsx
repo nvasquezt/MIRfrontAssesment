@@ -6,6 +6,7 @@ import './ProductCard.scss';
 import Button from '../Button';
 import { Link } from 'react-router-dom';
 import { PRODUCT_DETAIL_ROUTE } from 'src/Constants/Router';
+import Timer from '../Timer';
 
 
 const ProductCard = (props) => {
@@ -24,9 +25,11 @@ const ProductCard = (props) => {
         {title}
       </div>
       <div className="productCard__button">
+      <Timer />
         <Link to={`${PRODUCT_DETAIL_ROUTE}/${id}`}>
         <Button name="Go to Details" type="button" handleClick={handleClick} />
         </Link>
+
       </div>
     </div>
   );
