@@ -1,16 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Detail.scss'
+import Button from 'src/Components/Button';
+import { Link } from 'react-router-dom';
+import Loading from '../Loading';
 
 const Detail = () => {
+  const [loading, setLoading] = useState(true);
   const eachProduct = useSelector(state => state.eachProduct);
   const {title, price, description, category, image, rating} = eachProduct;
   const {rate, count}= rating
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
   return (
     <div className="detailPage">
-      <div className="detail">
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="detail">
       <div className="detail__title">
         <h1>{title}</h1>
       </div>
@@ -31,9 +43,15 @@ const Detail = () => {
           <div className="detail__info--category">
             <span><strong>category:</strong> {category}</span>
           </div>
+          <div className="detail__info--button">
+          <Link to={'/'}>
+          <Button name="Back Home" type="button" />
+        </Link>
+          </div>
       </div>
     </div>
       </div>
+      )}
   </div>
   )
 }
