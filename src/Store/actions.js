@@ -13,6 +13,10 @@ export const getAProductAction = (id) => ({
   payload: id
 });
 
+export const expiredTime = (payload) => ({
+  type: 'EXPIRED_TIME',
+  payload: payload});
+
 
 export const getProductsThunk = () => async(dispatch) => {
   try {

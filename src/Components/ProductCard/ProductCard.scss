@@ -28,5 +28,9 @@
   &__button{
     display: flex;
     justify-content: space-between;
+
+    &--disabled{
+      visibility: hidden;
+    }
   }
 }

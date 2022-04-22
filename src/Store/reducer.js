@@ -12,7 +12,8 @@ const initialState = {
       rate: 0,
       count: 0
     }
-  }
+  },
+  expiredTime: false,
 }
 
 
@@ -27,6 +28,11 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         eachProduct: action.payload
+      }
+    case 'EXPIRED_TIME':
+      return {
+        ...state,
+        expiredTime: action.payload
       }
     default:
       return state;

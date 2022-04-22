@@ -7,6 +7,7 @@ import './Home.scss';
 const Home = () => {
   const reduxProducts = useSelector(state => state.products);
   const dispatch = useDispatch();
+  const expiredTime = useSelector(state => state.expiredTime);
 
   useEffect(() => {
     dispatch(getProductsThunk());
@@ -25,7 +26,9 @@ const Home = () => {
             id={product.id}
             key={product.id}
             image={product.image}
-            title={product.title} />
+            title={product.title}
+            expiredTime={expiredTime}
+            />
           ))
         }
       </div>

@@ -1,21 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { getAProductThunk } from '../../Store/actions';
 import './ProductCard.scss';
-import Button from '../Button';
+import { getAProductThunk } from '../../Store/actions';
 import { Link } from 'react-router-dom';
 import { PRODUCT_DETAIL_ROUTE } from 'src/Constants/Router';
-import Timer from '../Timer';
+import { useDispatch } from 'react-redux';
+import Button from '../Button';
+import Countdown from 'react-countdown';
+import PropTypes from 'prop-types';
+import React, {useState, useEffect} from 'react';
 
 
 const ProductCard = (props) => {
   const { id,image, title } = props;
+  const [random, setRandom] = useState(0);
+  const [changeClass, setChangeClass] = useState(true);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setRandom(Math.floor(Math.random() * 5) + 1);
+  }, [])
 
   const handleClick = async () => {
     dispatch(getAProductThunk(id));
   }
+  const handleComplete = () => {
+    setChangeClass(false);
+    setRandom(0);
+  }
+
   return (
     <div className="productCard">
       <div className="productCard__containerImage">
@@ -24,12 +35,12 @@ const ProductCard = (props) => {
       <div className="productCard__title">
         {title}
       </div>
-      <div className="productCard__button">
-      <Timer />
-        <Link to={`${PRODUCT_DETAIL_ROUTE}/${id}`}>
-        <Button name="Go to Details" type="button" handleClick={handleClick} />
-        </Link>
 
+      <div className={changeClass ? 'productCard__button' : 'productCard__button--disabled'}>
+        <Countdown date={Date.now() + (random * 40000)} onComplete={handleComplete} />
+        <Link to={`${PRODUCT_DETAIL_ROUTE}/${id}`}>
+          <Button name="Go to Details" type="button" handleClick={handleClick} />
+        </Link>
       </div>
     </div>
   );
@@ -38,7 +49,7 @@ const ProductCard = (props) => {
 ProductCard.propTypes = {
   id: PropTypes.number.isRequired,
   image: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
 }
 
 ProductCard.defaultProps ={
