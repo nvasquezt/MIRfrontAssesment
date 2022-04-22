@@ -25,7 +25,10 @@ const About = () => {
             <li> Entender el funcionamiento específico de las API, su construcción y contenido</li>
           </ul>
         </div>
-        <h3>Contacto</h3>
+        <div className='container__text'>
+          <h3>Contacto</h3>
+          <p> <strong>Correo:</strong> lic.vasquezt@gmail.com </p>
+        </div>
         <div className='container__contact'>
           <a href="https://www.linkedin.com/in/nvasquezt" target="_blank" rel="noreferrer"><img className='container__contact--logo' src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" /></a>
           <a href="https://github.com/nvasquezt" target="_blank" rel="noreferrer"><img className='container__contact--logo' src="https://as1.ftcdn.net/v2/jpg/04/52/18/48/1000_F_452184858_iZXfI1h2BdKB5i9cDwpu9Ue1il8Mxxfq.jpg" alt="github" /></a>

@@ -30,7 +30,7 @@ const ProductCard = (props) => {
         {title}
       </div>
       <div className={changeClass ? 'productCard__button' : 'productCard__button--disabled'}>
-        <Countdown date={Date.now()+10000 * (Math.floor(Math.random() * 5) + 1)} onComplete={handleComplete} />
+        <Countdown date={Date.now()+20000 * (Math.floor(Math.random() * 5) + 1)} onComplete={handleComplete} />
         <Link to={`${PRODUCT_DETAIL_ROUTE}/${id}`}>
           <Button name="Go to Details" type="button" handleClick={handleClick} />
         </Link>
