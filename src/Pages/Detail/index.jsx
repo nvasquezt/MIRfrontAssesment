@@ -9,7 +9,8 @@ const Detail = () => {
   const {rate, count}= rating
 
   return (
-    <div className="detail">
+    <div className="detailPage">
+      <div className="detail">
       <div className="detail__title">
         <h1>{title}</h1>
       </div>
@@ -22,7 +23,7 @@ const Detail = () => {
             <span><strong>Rate:</strong> {rate}</span> <span>/({count} votes)</span>
           </div>
           <div className="detail__info--price">
-            <span><strong>Price:</strong> {price}</span>
+            <span><strong>Price:</strong> $ {price} USD</span>
           </div>
           <div className="detail__info--description">
             <p><strong>Description</strong> <br />{description}</p>
@@ -31,8 +32,8 @@ const Detail = () => {
             <span><strong>category:</strong> {category}</span>
           </div>
       </div>
-
     </div>
+      </div>
   </div>
   )
 }
