@@ -15,7 +15,7 @@ const About = () => {
           </p>
         </div>
         <div className='container__image'>
-          <img className='container__image--prf' src='https://media-exp1.licdn.com/dms/image/C4D03AQGhcjxs9369iQ/profile-displayphoto-shrink_200_200/0/1624562037719?e=1652918400&v=beta&t=7nUMCY-zsWpb_VWeGVPBx1Yx8SHh8yBg9RROKCSgWMw' alt='Norbey' />
+          <img className='container__image--prf' src='https://res.cloudinary.com/dunrpkkpq/image/upload/v1654125942/WIN_20210405_23_27_38_Pro_yowx4e.jpg' alt='Norbey' />
         </div>
         <div className='container__text'>
           <h3>Aprendizajes importantes con Make it Real</h3>
